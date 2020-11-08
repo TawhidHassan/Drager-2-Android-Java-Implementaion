@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.dragger2implementation.basics.MainViewModel;
+import com.example.dragger2implementation.di.DaggerMainViewModelInjector;
 import com.example.dragger2implementation.network.NetworkClient;
 import com.example.dragger2implementation.network.NetworkConnection;
 
@@ -31,10 +32,7 @@ public class MainActivity extends AppCompatActivity {
         textView=findViewById(R.id.textId);
         button  =findViewById(R.id.button);
 
-        NetworkConnection connection=new NetworkConnection();
-        NetworkClient client=new NetworkClient(connection);
-
-        mMainViewModel=new MainViewModel(client);
+        mMainViewModel= DaggerMainViewModelInjector.create().getMainViewModel();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
