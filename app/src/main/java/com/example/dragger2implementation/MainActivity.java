@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 import com.example.dragger2implementation.basics.MainViewModel;
 import com.example.dragger2implementation.di.DaggerMainViewModelInjector;
-import com.example.dragger2implementation.network.NetworkClient;
-import com.example.dragger2implementation.network.NetworkConnection;
+
 
 import javax.inject.Inject;
 
@@ -22,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     TextView textView;
-    private MainViewModel mMainViewModel;
+
+    @Inject
+     MainViewModel mMainViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         textView=findViewById(R.id.textId);
         button  =findViewById(R.id.button);
 
-        mMainViewModel= DaggerMainViewModelInjector.create().getMainViewModel();
+
+        DaggerMainViewModelInjector.create().injectField(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
