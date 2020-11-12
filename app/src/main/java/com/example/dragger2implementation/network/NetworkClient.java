@@ -5,6 +5,7 @@ import android.util.Log;
 import javax.inject.Inject;
 
 import static android.content.ContentValues.TAG;
+import static com.example.dragger2implementation.basics.Constants.MY_TAG;
 
 public class NetworkClient {
     @Inject
@@ -18,7 +19,7 @@ public class NetworkClient {
 
     @Inject
     public void testMethod(){
-        Log.d(TAG,"testMethod : this is test metyhos");
+        Log.d(MY_TAG,"testMethod : this is test metyhos");
     }
 
     @Inject

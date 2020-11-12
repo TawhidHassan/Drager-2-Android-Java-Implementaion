@@ -5,7 +5,7 @@ import com.example.dragger2implementation.basics.MainViewModel;
 
 import dagger.Component;
 
-@Component
+@Component(modules = {DataStorageModule.class})
 public interface MainViewModelInjector {
 
 

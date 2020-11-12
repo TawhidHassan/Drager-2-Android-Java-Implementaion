@@ -6,6 +6,7 @@ import android.util.Log;
 import javax.inject.Inject;
 
 import static android.content.ContentValues.TAG;
+import static com.example.dragger2implementation.basics.Constants.MY_TAG;
 
 public class NetworkTester {
 
@@ -15,6 +16,6 @@ public class NetworkTester {
     }
 
     public void attachToNetwork(NetworkClient client){
-        Log.d(TAG,"attach Network : Attached to network");
+        Log.d(MY_TAG,"attach Network : Attached to network");
     }
 }
